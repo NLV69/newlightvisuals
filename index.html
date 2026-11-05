@@ -588,6 +588,21 @@ button { font: inherit; color: inherit; }
 
 /* Other (press and print) */
 .other { padding-block: clamp(84px, 11vw, 150px) 0; }
+.book {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 22px;
+}
+.book img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background: var(--panel);
+  transition: opacity 0.2s ease;
+}
+.book:hover img { opacity: 0.9; }
 /* About */
 .about { padding-block: clamp(84px, 11vw, 150px) 0; }
 .two {
@@ -1210,9 +1225,16 @@ footer p { margin: 0; }
   <section class="other wrap" id="other" aria-labelledby="other-h">
     <div class="two">
       <h2 id="other-h">Other</h2>
-      <ul class="link-list">
-        <li><a href="https://www.amazon.com/dp/1426223404" target="_blank" rel="noopener"><span class="lk">World From Above</span><span class="ld">National Geographic's book of drone photography by Jeffrey Kerby, featuring NLV's work. On Amazon</span><span class="la" aria-hidden="true">↗</span></a></li>
-      </ul>
+      <div>
+        <a class="book" href="https://www.amazon.com/dp/1426223404" target="_blank" rel="noopener" aria-label="World From Above on Amazon">
+          <img src="images/book-cover-sm.jpg" srcset="images/book-cover-sm.jpg 600w, images/book-cover.jpg 1200w" sizes="(max-width: 720px) 46vw, 380px" alt="National Geographic's World From Above, photographed by NLV" width="600" height="600" loading="lazy" decoding="async">
+          <img src="images/book-spread-sm.jpg" srcset="images/book-spread-sm.jpg 600w, images/book-spread.jpg 1200w" sizes="(max-width: 720px) 46vw, 380px" alt="The Breach printed across a spread in World From Above" width="600" height="600" loading="lazy" decoding="async">
+        </a>
+        <ul class="link-list">
+          <li><a href="https://www.amazon.com/dp/1426223404" target="_blank" rel="noopener"><span class="lk">World From Above</span><span class="ld">National Geographic's book of drone photography by Jeffrey Kerby, featuring NLV's work. On Amazon</span><span class="la" aria-hidden="true">↗</span></a></li>
+          <li><a href="https://salt-haven.com.au" target="_blank" rel="noopener"><span class="lk">Salthaven</span><span class="ld">Limited edition fine art prints and original photography from the Illawarra, framed or unframed</span><span class="la" aria-hidden="true">↗</span></a></li>
+        </ul>
+      </div>
     </div>
   </section>
 
